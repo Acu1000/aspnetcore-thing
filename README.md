@@ -1,4 +1,4 @@
-# Dokumentacja przykładowego uruchomienia
+# Instrukcja przykładowego uruchomienia
 
 ### Uruchomienie:
 dotnet ef database update
