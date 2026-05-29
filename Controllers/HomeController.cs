@@ -19,7 +19,7 @@ public class HomeController : Controller
         return View();
     }
 
-    [HttpGet("ThrowUnhandled")]
+    [HttpGet("Throw")]
     public IActionResult ThrowUnhandled() 
     {
         throw new Exception("Example Exception");

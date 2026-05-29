@@ -71,7 +71,7 @@ app.UseExceptionHandler(errorApp =>
 
         await context.Response.WriteAsJsonAsync(new
         {
-            message = "An unexpected error occurred",
+            message = "An unexpected error occurred (handled by global handler)",
             detail = error?.Message
         });
     });
