@@ -19,15 +19,19 @@ public class HomeController : Controller
         return View();
     }
 
-    [Authorize]
-    public IActionResult Privacy()
+    [HttpGet("ThrowUnhandled")]
+    public IActionResult ThrowUnhandled() 
     {
-        return View();
+        throw new Exception("Example Exception");
     }
 
-    [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
-    public IActionResult Error()
+    [HttpGet("Teapot")]
+    public IActionResult Teapot()
     {
-        return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
+        return Problem(
+            detail: "I'm a teapot",
+            statusCode: 418,
+            title: "Teapot error"
+        );
     }
 }
