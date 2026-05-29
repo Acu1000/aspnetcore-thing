@@ -1,3 +1,6 @@
+# Opis
+Projekt jest prostym API do przechowywania listy pinezek oznaczających lokalizacje na mapie. Zaimplementowany jest system logowania, endpointy CRUD, baza danych, walidacja danych i obsługa błędów.
+
 # Instrukcja przykładowego uruchomienia
 
 ### Uruchomienie:
