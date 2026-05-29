@@ -1,5 +1,3 @@
-using System.ComponentModel.DataAnnotations;
-
 namespace ProjZtpai.Models;
 
 public class Pin
@@ -8,12 +6,9 @@ public class Pin
 
     public string? UserId { get; set; }
 
-    [Required]
     public float Latitude { get; set; }
 
-    [Required]
     public float Longitude { get; set; }
 
-    [Required]
     public string Title { get; set; } = "";
 }

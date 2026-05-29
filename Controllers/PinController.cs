@@ -2,6 +2,7 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using ProjZtpai.Data;
 using ProjZtpai.Models;
+using ProjZtpai.Dto;
 using Microsoft.AspNetCore.Authorization;
 using System.Security.Claims;
 
@@ -51,8 +52,14 @@ public class PinController : Controller
 
     [Authorize]
     [HttpPost]
-    public async Task<ActionResult<Pin>> CreatePin(Pin pin)
+    public async Task<ActionResult<Pin>> CreatePin(PinCreateDto pinDto)
     {
+        var pin = new Pin();
+
+        pin.Latitude = pinDto.Latitude!.Value;
+        pin.Longitude = pinDto.Longitude!.Value;
+        pin.Title = pinDto.Title;
+
         var userId = User.FindFirstValue(
         ClaimTypes.NameIdentifier);
 
